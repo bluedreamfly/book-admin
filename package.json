@@ -1,0 +1,25 @@
+{
+  "name": "book-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.0",
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "mysql2": "^1.6.5",
+    "redis": "^2.8.0",
+    "sequelize": "^5.1.0",
+    "sequelize-cli": "^5.4.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "hzhwalkbydream <hzhwalkbydream@gmail.com>",
+  "license": "MIT"
+}
