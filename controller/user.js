@@ -11,6 +11,7 @@ const fs = require('fs');
 
 
 module.exports = {
+    //用户登录
   'POST /user/login': async (ctx, next) =>{
     //   console.log('用户uid....', ctx.uid);
     const md5 = crypto.createHash('md5');
@@ -51,6 +52,7 @@ module.exports = {
     }
   },
 
+  //用户注册
   'POST /user/add': async (ctx, next) => {
     const md5 = crypto.createHash('md5');
     const { passwd, ...rest } = ctx.request.body || {};
@@ -94,6 +96,7 @@ module.exports = {
 
   },
 
+  //用户信息
   'GET /user/info': async (ctx, next) => {
     try {
         let userId = ctx.uid;
@@ -120,6 +123,7 @@ module.exports = {
     }
   },
 
+  //用户列表
   'GET /user/list': async (ctx, next) => {
     let list = await User.findAll();
     ctx.body = {
@@ -129,6 +133,7 @@ module.exports = {
     }
   },
 
+  //更新用户信息
   'POST /user/:id': async (ctx, next) => {
     try {
         let userId = ctx.params.id;
@@ -152,6 +157,7 @@ module.exports = {
     }
   },
 
+  //上传头像
   'POST /user/update/avator': async (ctx, next) => {
     const file = ctx.request.files.file;	// 获取上传文件
     const reader = fs.createReadStream(file.path);	// 创建可读流

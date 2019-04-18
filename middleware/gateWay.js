@@ -10,21 +10,19 @@ const login = async (ctx, next) => {
     } else {
         let auth = ctx.get('Authorization');
         const [_, token] = (auth || '').split(' ');
-        // console.log('uid.....token',token);
+
         let result = {
             code: 401,
             data: null,
             msg: '用户未登录，请先登录'
         }
-        // console.log('token...', token);
+
         if (!token) {
             ctx.body = result;
             return;
         }
-        // console.log('client .....', redis);
 
         let uid = await cget(token);
-        // console.log('uid.....', uid, token);
         if (!uid)  {
             ctx.body = result;
             return;
